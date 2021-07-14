@@ -1,0 +1,55 @@
+﻿@page "/"
+@namespace tx_dsserver_blazor_server.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tx-dsserver-blazor-server</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+    <link href="tx-dsserver-blazor-server.styles.css" rel="stylesheet" />
+
+    <script src="https://trial.dsserver.io/documenteditor/JS/txtextcontrol-ds-1.1.0.js"></script>
+</head>
+<body>
+    <component type="typeof(App)" render-mode="ServerPrerendered" />
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+
+    <!-- TX Text Control custom JS -->
+    <script>
+
+        function addEditorToElement(element) {
+
+            TXTextControl.init({
+                containerID: element.id,
+                serviceURL: "https://trial.dsserver.io",
+                authSettings: {
+                    clientId: "dsserver.5aT1rM0dVCcglvxo1nhvmORPzR23okd5",
+                    clientSecret: "j2zD7iLZhwlzO9ByKqwLgVoIwDKHQRMI"
+                }
+            });
+        }
+
+    </script>
+
+</body>
+</html>
