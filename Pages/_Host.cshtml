@@ -16,7 +16,7 @@
     <link href="css/site.css" rel="stylesheet" />
     <link href="tx-dsserver-blazor-server.styles.css" rel="stylesheet" />
 
-    <script src="https://trial.dsserver.io/documenteditor/JS/txtextcontrol-ds-1.1.0.js"></script>
+    <script src="https://trial.dsserver.io/documenteditor/JS/ds-server-document-editor.js"></script>
 </head>
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />
@@ -39,6 +39,7 @@
 
         function addEditorToElement(element) {
 
+            //Please enter your current client credentials
             TXTextControl.init({
                 containerID: element.id,
                 serviceURL: "https://trial.dsserver.io",
